@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Victor Barbearia — Cuiabá | Centro Sul</title>
+<meta name="description" content="Victor Barbearia em Cuiabá: degradê, tesoura, barba e limpeza de pele. Rua 13 de Junho, 1145 — Centro Sul. Seg a sáb, por ordem de chegada.">
+<meta name="theme-color" content="#0e0e10">
+<meta property="og:title" content="Victor Barbearia — Cuiabá">
+<meta property="og:description" content="Aqui não se trata apenas de cabelo e bigode! Centro Sul, Cuiabá.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ===== PIXEL / RASTREIO =====
+     Quando o pixel do Victor existir, cola aqui o snippet do Meta Pixel
+     e troca o PIXEL_ID em CONFIG. A função track() abaixo já dispara
+     fbq('trackCustom', ...) se o fbq existir.
+============================== -->
+
+<style>
+:root{
+  --bg:#0e0e10; --bg2:#151518; --card:#1b1b1f; --line:#2a2a30;
+  --txt:#f3f1ec; --muted:#a4a19a;
+  --gold:#c9a24a; --gold2:#e6c76e; --gold-dark:#8f6f2a;
+  --wa:#25d366; --wa-dark:#1da851;
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:480px;margin:0 auto;padding:0 20px}
+h1,h2,.display{font-family:"Bebas Neue",Inter,sans-serif;letter-spacing:.04em;font-weight:400}
+
+/* ---------- topo ---------- */
+.hero{padding:40px 0 28px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-40% -20% auto;height:420px;background:radial-gradient(circle at 50% 0,rgba(201,162,74,.22),transparent 60%);pointer-events:none}
+.brand{margin:0 auto}
+.brand img{display:block;width:100%;max-width:330px;height:auto;margin:0 auto;filter:drop-shadow(0 6px 24px rgba(201,162,74,.18))}
+.brand small{display:block;font-family:Inter,sans-serif;font-size:12px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;margin-top:10px}
+.tag{color:var(--muted);font-size:min(3.15vw,15px);margin:14px auto 0;max-width:none;white-space:nowrap}
+.proof{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--txt)}
+.chip b{color:var(--gold2);font-weight:700}
+.chip .star{color:var(--gold2)}
+
+/* ---------- botões ---------- */
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px 18px;border-radius:14px;font-weight:600;font-size:16px;border:1px solid transparent;cursor:pointer;transition:transform .08s,filter .15s;-webkit-tap-highlight-color:transparent}
+.btn:active{transform:scale(.985)}
+.btn-wa{background:var(--wa);color:#06250f}
+.btn-wa:hover{filter:brightness(1.05)}
+.btn-gold{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1a1305}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--txt)}
+.btn-ghost:hover{border-color:var(--gold)}
+.btn svg{width:22px;height:22px;flex:none}
+.btn-sm{padding:12px 14px;font-size:14px;border-radius:12px}
+
+/* ---------- seções ---------- */
+section{padding:26px 0}
+.sec-title{font-size:26px;color:var(--txt);margin-bottom:4px}
+.sec-sub{color:var(--muted);font-size:14px;margin-bottom:16px}
+
+/* bloco de informação */
+.mode-detail{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;font-size:14px;color:var(--muted);margin-bottom:14px}
+.mode-detail b{color:var(--txt);font-weight:600}
+.mode-detail .row{display:flex;gap:10px;align-items:flex-start;margin-top:6px}
+.mode-detail .row:first-child{margin-top:0}
+
+/* serviços */
+.svcs{display:grid;gap:10px}
+.svc{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.svc .n{font-family:"Bebas Neue",sans-serif;font-size:22px;color:var(--gold);width:28px;flex:none;letter-spacing:.05em}
+.svc .t{flex:1}
+.svc strong{display:block;font-size:15.5px;font-weight:600}
+.svc span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+
+/* preço e complementos */
+.svc .t .top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.svc .price{font-style:normal;font-family:"Bebas Neue",sans-serif;font-size:19px;letter-spacing:.03em;color:var(--gold2);flex:none;margin:0}
+.sub-title{font-family:"Bebas Neue",Inter,sans-serif;font-weight:400;letter-spacing:.04em;font-size:21px;color:var(--txt);margin:22px 0 10px}
+.xtras{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.xtra{display:flex;flex-direction:column;gap:3px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 14px}
+.xtra strong{font-size:14.5px;font-weight:600}
+.xtra em{font-style:normal;font-family:"Bebas Neue",sans-serif;font-size:18px;letter-spacing:.03em;color:var(--gold2);white-space:nowrap}
+.xtra .from{display:block;font-family:Inter,sans-serif;font-size:11px;letter-spacing:0;color:var(--muted);line-height:1.2}
+
+/* avaliações */
+.revs{display:grid;gap:10px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.rev .stars{color:var(--gold2);font-size:14px;letter-spacing:2px;margin-bottom:6px}
+.rev p{font-size:15px}
+.rev small{display:block;color:var(--muted);margin-top:8px;font-size:12.5px}
+.rev-cta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+
+/* como chegar */
+.addr{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.addr strong{display:block;font-size:16px}
+.addr p{color:var(--muted);font-size:14px;margin-top:4px}
+.hours{display:grid;grid-template-columns:1fr auto;gap:4px 12px;font-size:14px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.hours span:nth-child(even){text-align:right;color:var(--txt)}
+.hours span:nth-child(odd){color:var(--muted)}
+.hours .off{color:#e07b7b!important}
+
+/* redes */
+.socials{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.socials.one{grid-template-columns:1fr}
+.social{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:13.5px;font-weight:500}
+.social svg{width:20px;height:20px;flex:none;color:var(--gold2)}
+.social small{display:block;color:var(--muted);font-weight:400;font-size:11.5px}
+
+/* rodapé + barra fixa */
+footer{padding:28px 0 100px;text-align:center;color:var(--muted);font-size:12.5px}
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 20px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(14,14,16,0),rgba(14,14,16,.96) 30%);z-index:9}
+.sticky .btn{max-width:440px;margin:0 auto;padding:14px 16px;font-size:15px;border-radius:13px;box-shadow:0 8px 30px rgba(37,211,102,.28)}
+.sticky .btn svg{width:20px;height:20px}
+@media (min-width:600px){.hero{padding-top:56px}}
+</style>
+</head>
+<body>
+
+<!-- ================= TOPO ================= -->
+<header class="hero">
+  <div class="wrap">
+    <h1 class="brand">
+      <img src="logo.png" alt="Victor Barbearia">
+      <small>Cuiabá · MT</small>
+    </h1>
+    <p class="tag">Aqui não se trata apenas de cabelo e bigode!</p>
+    <div class="proof">
+      <span class="chip"><span class="star">★</span> <b>Ótima avaliação</b> no Google</span>
+      <span class="chip">Seg a sáb · 09h às 19h30</span>
+      <span class="chip">Centro Sul, Cuiabá</span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= ONDE ATENDE ================= -->
+<section id="agendar">
+  <div class="wrap">
+    <h2 class="sec-title">Como funciona</h2>
+    <p class="sec-sub">Atendimento por ordem de chegada.</p>
+
+    <div class="mode-detail">
+      <div class="row">📍 <span><b>Rua 13 de Junho, 1145 — Centro Sul, Cuiabá</b><br>Segunda a sábado, das 09h às 19h30. Domingo fechado.</span></div>
+      <div class="row">💬 <span>Dúvida sobre algum serviço? Chama no WhatsApp.</span></div>
+    </div>
+
+    <a class="btn btn-ghost" data-out="maps" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      Ver no mapa
+    </a>
+  </div>
+</section>
+
+<!-- ================= SERVIÇOS ================= -->
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">Serviços e valores</h2>
+
+    <div class="svcs">
+      <div class="svc">
+        <span class="n">01</span>
+        <span class="t"><span class="top"><strong>Corte</strong><em class="price">R$ 40</em></span><span>Fade baixo, médio ou alto, acabamento na navalha</span></span>
+      </div>
+      <div class="svc">
+        <span class="n">02</span>
+        <span class="t"><span class="top"><strong>Corte na tesoura</strong><em class="price">R$ 50</em></span><span>Social, clássico ou texturizado, sem máquina</span></span>
+      </div>
+      <div class="svc">
+        <span class="n">03</span>
+        <span class="t"><span class="top"><strong>Barba</strong><em class="price">R$ 40</em></span><span>Desenho, alinhamento e toalha quente</span></span>
+      </div>
+      <div class="svc">
+        <span class="n">04</span>
+        <span class="t"><span class="top"><strong>Limpeza de pele</strong><em class="price">R$ 40</em></span><span>Pra sair do corte com o rosto no jeito</span></span>
+      </div>
+      <div class="svc">
+        <span class="n">05</span>
+        <span class="t"><span class="top"><strong>Pigmentação</strong><em class="price">R$ 40</em></span><span>Preenche falha no cabelo e na barba</span></span>
+      </div>
+      <div class="svc">
+        <span class="n">06</span>
+        <span class="t"><span class="top"><strong>Depilação nasal</strong><em class="price">R$ 40</em></span><span>Rápido, com cera, sem dor de cabeça</span></span>
+      </div>
+    </div>
+
+    <h3 class="sub-title">Também faço</h3>
+    <div class="xtras">
+      <div class="xtra"><strong>Luzes</strong><em><span class="from">a partir de</span>R$ 150</em></div>
+      <div class="xtra"><strong>Sobrancelha</strong><em>R$ 20</em></div>
+      <div class="xtra"><strong>Pezinho</strong><em>R$ 20</em></div>
+      <div class="xtra"><strong>Hidratação</strong><em>R$ 40</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AVALIAÇÕES ================= -->
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">Quem já cortou comigo</h2>
+    <p class="sec-sub">Depoimentos reais, publicados no Google.</p>
+    <div class="revs">
+      <div class="rev"><div class="stars">★★★★★</div><p>“Barbearia top, profissional atencioso.”</p><small>Avaliação no Google</small></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>“Melhor barbeiro da região, podem confiar!”</p><small>Avaliação no Google</small></div>
+    </div>
+    <div class="rev-cta">
+      <a class="btn btn-ghost btn-sm" data-out="reviews" href="#" target="_blank" rel="noopener">Ver todas</a>
+      <a class="btn btn-gold btn-sm" data-out="review" href="#" target="_blank" rel="noopener">Avaliar no Google</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMO CHEGAR ================= -->
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">Como chegar</h2>
+    <div class="addr">
+      <strong>Victor Barbearia</strong>
+      <p>Rua 13 de Junho, 1145 — Centro Sul<br>Cuiabá · MT · 78005-000</p>
+      <div class="hours">
+        <span>Segunda a sábado</span><span>09h – 19h30</span>
+        <span>Domingo</span><span class="off">Fechado</span>
+      </div>
+    </div>
+    <div style="height:10px"></div>
+    <a class="btn btn-ghost" data-out="maps" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      Abrir no Google Maps
+    </a>
+  </div>
+</section>
+
+<!-- ================= REDES ================= -->
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">Me acompanha</h2>
+    <p class="sec-sub">Os cortes da semana, antes e depois, os trabalhos novos.</p>
+    <div class="socials one">
+      <a class="social" data-out="ig_loja" href="https://www.instagram.com/victor_barbearia_official/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        <span>@victor_barbearia_official<small>Instagram da barbearia</small></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Victor Barbearia · Cuiabá, MT</div>
+</footer>
+
+<!-- barra fixa -->
+<div class="sticky">
+  <a class="btn btn-wa" href="#" data-wa data-svc="">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-1 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.5-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.1 15 3.7 13.5 3.7 12c0-4.6 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.7 8.2-8.3 8.2z"/></svg>
+    <span class="btn-label">Chamar no WhatsApp</span>
+  </a>
+</div>
+
+<script>
+/* ===================== CONFIG ===================== */
+const CONFIG = {
+  WHATSAPP: "5565993546715",                 // 65 99354-6715
+  PIXEL_ID: "",                              // Meta Pixel do Victor (vazio = não dispara)
+  COLLECTOR: "",                             // URL do Apps Script coletor, se for usar (vazio = não envia)
+  MAPS:    "https://www.google.com/maps/search/?api=1&query=Victor_barbearia+Rua+13+de+Junho+1145+Cuiab%C3%A1",
+  REVIEWS: "https://www.google.com/search?q=Victor_barbearia+Cuiab%C3%A1#lrd=,1",
+  REVIEW:  "https://www.google.com/search?q=Victor_barbearia+Cuiab%C3%A1#lrd=,3", // trocar pelo g.page/r/.../review quando tiver
+};
+
+/* origem: ?c=nome-da-campanha (story, bio, anúncio) — fica salvo pra sessão */
+const params = new URLSearchParams(location.search);
+const origem = params.get("c") || params.get("utm_campaign") || sessionStorage.getItem("c") || "bio";
+try { sessionStorage.setItem("c", origem); } catch(e){}
+
+/* ---------- mensagem do WhatsApp ---------- */
+function waMessage(svc){
+  var msg = svc
+    ? "Fala Victor! Quero fazer " + svc.toLowerCase() + " aí na barbearia hoje. Como está o movimento?"
+    : "Fala Victor! Quero cortar aí na barbearia hoje. Como está o movimento?";
+  msg += "\n\n(vim pelo link da bio · " + origem + ")";
+  return msg;
+}
+function waUrl(svc){
+  return "https://wa.me/" + CONFIG.WHATSAPP + "?text=" + encodeURIComponent(waMessage(svc));
+}
+document.querySelectorAll("[data-wa]").forEach(el => {
+  el.addEventListener("click", e => {
+    e.preventDefault();
+    const svc = el.dataset.svc || "";
+    track("whatsapp", { servico: svc || "geral" });
+    window.open(waUrl(svc), "_blank", "noopener");
+  });
+});
+
+/* ---------- links de saída ---------- */
+const OUT = { maps: CONFIG.MAPS, reviews: CONFIG.REVIEWS, review: CONFIG.REVIEW };
+document.querySelectorAll("[data-out]").forEach(a => {
+  const k = a.dataset.out;
+  if (OUT[k]) a.href = OUT[k];
+  a.addEventListener("click", function(){ track("saida_" + k); });
+});
+
+/* ---------- rastreio ---------- */
+function track(ev, data){
+  const payload = Object.assign({ ev, origem, ts: Date.now(), pg: location.pathname }, data || {});
+  if (window.fbq && CONFIG.PIXEL_ID) { try { fbq("trackCustom", ev, payload); } catch(e){} }
+  if (CONFIG.COLLECTOR) {
+    try { navigator.sendBeacon(CONFIG.COLLECTOR, new Blob([JSON.stringify(payload)], {type:"text/plain"})); } catch(e){}
+  }
+}
+track("pageview");
+</script>
+</body>
+</html>
